@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Langit — Weather App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mood="default">
+
+  <div class="sky-layer" aria-hidden="true">
+    <div class="sun-glow"></div>
+  </div>
+
+  <main class="app">
+
+    <header class="app__header">
+      <div class="brand">
+        <span class="brand__mark">☁</span>
+        <span class="brand__name">Langit</span>
+      </div>
+      <div class="unit-toggle">
+        <span class="unit-toggle__label is-active" id="labelCelsius">°C</span>
+        <button
+          class="switch"
+          id="unitSwitch"
+          type="button"
+          role="switch"
+          aria-checked="false"
+          aria-label="Ganti satuan suhu ke Fahrenheit"
+        >
+          <span class="switch__thumb"></span>
+        </button>
+        <span class="unit-toggle__label" id="labelFahrenheit">°F</span>
+      </div>
+    </header>
+
+    <section class="search">
+      <form id="searchForm" class="search__form" autocomplete="off">
+        <div class="search__input-wrap">
+          <span class="search__pin" aria-hidden="true">📍</span>
+          <input
+            id="cityInput"
+            class="search__input"
+            type="text"
+            placeholder="Cari nama kota, mis. Medan"
+            aria-label="Nama kota"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+        </div>
+        <button class="search__button" type="submit">
+          Cari
+        </button>
+      </form>
+
+      <div class="history" id="historyRow" hidden>
+        <span class="history__label">Riwayat:</span>
+        <div class="history__chips" id="historyChips"></div>
+        <button class="history__clear" id="clearHistory" type="button">Hapus</button>
+      </div>
+    </section>
+
+    <section class="status" id="statusArea" hidden>
+      <div class="status__box" id="statusBox"></div>
+    </section>
+
+    <section class="weather" id="weatherCard" hidden>
+
+      <div class="weather__main">
+        <div class="weather__place">
+          <h1 id="cityName" class="weather__city">—</h1>
+          <p id="dateTime" class="weather__date">—</p>
+        </div>
+
+        <div class="weather__hero">
+          <img id="weatherIcon" class="weather__icon" src="" alt="">
+          <div class="weather__temp-block">
+            <span id="temperature" class="weather__temp">—</span>
+            <span id="unitLabel" class="weather__unit">°C</span>
+          </div>
+        </div>
+
+        <p id="description" class="weather__description">—</p>
+
+        <dl class="weather__details">
+          <div class="weather__detail">
+            <dt>Terasa seperti</dt>
+            <dd id="feelsLike">—</dd>
+          </div>
+          <div class="weather__detail">
+            <dt>Kelembaban</dt>
+            <dd id="humidity">—</dd>
+          </div>
+          <div class="weather__detail">
+            <dt>Angin</dt>
+            <dd id="wind">—</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="forecast">
+        <h2 class="forecast__title">Prakiraan 5 Hari</h2>
+        <div class="forecast__row" id="forecastRow"></div>
+      </div>
+
+      <div class="extra-grid">
+        <div class="info-card">
+          <div class="info-card__header">
+            <span class="info-card__icon" aria-hidden="true">📍</span>
+            <h2 class="info-card__title">Lokasi di Peta</h2>
+          </div>
+          <div class="map-card__frame">
+            <a id="openInMaps" class="map-card__link" href="#" target="_blank" rel="noopener">Buka di Maps ↗</a>
+            <iframe
+              id="locationMap"
+              title="Peta lokasi kota"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src=""
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card__header">
+            <span class="info-card__icon" aria-hidden="true">🗒️</span>
+            <h2 class="info-card__title">Info Singkat</h2>
+          </div>
+          <dl class="quick-info">
+            <div class="quick-info__row">
+              <dt>Kota</dt>
+              <dd id="qiCity">—</dd>
+            </div>
+            <div class="quick-info__row">
+              <dt>Negara</dt>
+              <dd id="qiCountry">—</dd>
+            </div>
+            <div class="quick-info__row">
+              <dt>Koordinat</dt>
+              <dd id="qiCoords">—</dd>
+            </div>
+            <div class="quick-info__row">
+              <dt>Zona Waktu</dt>
+              <dd id="qiTimezone">—</dd>
+            </div>
+            <div class="quick-info__row">
+              <dt>Matahari Terbit</dt>
+              <dd id="qiSunrise">—</dd>
+            </div>
+            <div class="quick-info__row">
+              <dt>Matahari Terbenam</dt>
+              <dd id="qiSunset">—</dd>
+            </div>
+            <div class="quick-info__row">
+              <dt>Terakhir Diperbarui</dt>
+              <dd id="qiUpdated">—</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="empty" id="emptyState" hidden>
+      <p>Belum ada kota yang dicari.</p>
+      <p class="empty__hint">Ketik nama kota di atas untuk melihat cuacanya.</p>
+    </section>
+
+  </main>
+
+  <footer class="app__footer">
+    <p>Data cuaca oleh <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a> · Tugas Rutin 5 — Pemrograman Web</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
