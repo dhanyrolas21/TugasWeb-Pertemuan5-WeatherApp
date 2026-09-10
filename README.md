@@ -69,7 +69,7 @@ git init
 git add .
 git commit -m "Tugas Rutin 5: Weather App"
 git branch -M main
-git remote add origin https://github.com/<username>/TugasWeb-Pertemuan5-WeatherApp.git
+git remote add origin https://github.com/<dhanyrolas21>/TugasWeb-Pertemuan5-WeatherApp.git
 git push -u origin main
 ```
 
