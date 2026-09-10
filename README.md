@@ -18,17 +18,6 @@ Weather app sederhana (vanilla HTML/CSS/JS) yang mengambil data cuaca dari **Ope
 4. Buka `index.html` langsung di browser (double click), atau jalankan lewat live server (VS Code extension "Live Server") supaya lebih nyaman saat development.
 5. Saat pertama dibuka, halaman otomatis menampilkan cuaca **Medan**. Ketik nama kota lain di kolom pencarian untuk berpindah, misalnya `Jakarta`, `Tokyo`.
 
-### Soal keamanan API key
-
-Untuk aplikasi frontend murni (HTML/CSS/JS tanpa server backend), API key **tidak bisa disembunyikan 100%** — begitu aplikasi berjalan di browser, siapa pun yang membuka tab Network di DevTools tetap bisa melihat key di URL request. Itu keterbatasan bawaan arsitektur client-side, bukan sesuatu yang bisa "diperbaiki" dari sisi kode saja.
-
-Yang bisa dan sudah diterapkan di proyek ini:
-- Key disimpan di `config.js`, file terpisah yang masuk daftar `.gitignore` — jadi key asli **tidak pernah ter-push ke GitHub public**. Ini melindungi dari ancaman paling umum, yaitu bot yang otomatis scan repository public untuk mencari API key yang bocor.
-- `config.example.js` disediakan sebagai template kosong yang aman untuk di-commit, supaya siapa pun yang clone repo tahu harus mengisi key-nya sendiri.
-
-Kalau butuh proteksi penuh (key benar-benar tidak terlihat siapa pun, termasuk lewat DevTools), solusinya adalah membuat backend/proxy server kecil yang menyimpan key di sisi server dan diteruskan ke OpenWeatherMap — di luar cakupan tugas "vanilla JS" ini, tapi jadi langkah lanjutan yang wajar kalau proyek ini dikembangkan lagi nanti.
-
-> Kalau API key Anda pernah tersebar di tempat lain (chat, screenshot, commit lama), sebaiknya regenerate key baru dari dashboard OpenWeatherMap.
 
 ## Requirement yang dipenuhi
 
@@ -73,4 +62,4 @@ git remote add origin https://github.com/<dhanyrolas21>/TugasWeb-Pertemuan5-Weat
 git push -u origin main
 ```
 
-Pastikan repository dibuat dengan nama persis `TugasWeb-Pertemuan5-WeatherApp` dan visibility **Public**, lalu kumpulkan link repo-nya lewat LMS UNIMED.
+Dhany Rolas- Tugas-Mata-Kuliah-Pemrograman-Web-WeatherApp
