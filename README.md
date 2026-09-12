@@ -6,15 +6,7 @@ Weather app sederhana (vanilla HTML/CSS/JS) yang mengambil data cuaca dari **Ope
 
 ## Cara menjalankan
 
-1. Buat API key gratis di [openweathermap.org/api](https://openweathermap.org/api) (menu **API keys** setelah daftar/login). Key baru biasanya aktif dalam beberapa menit sampai 2 jam.
-2. Salin `config.example.js` menjadi `config.js`:
-   ```bash
-   cp config.example.js config.js
-   ```
-3. Buka `config.js`, isi dengan API key Anda:
-   ```js
-   const API_KEY = "isi_key_anda_di_sini";
-   ```
+
 4. Buka `index.html` langsung di browser (double click), atau jalankan lewat live server (VS Code extension "Live Server") supaya lebih nyaman saat development.
 5. Saat pertama dibuka, halaman otomatis menampilkan cuaca **Medan**. Ketik nama kota lain di kolom pencarian untuk berpindah, misalnya `Jakarta`, `Tokyo`.
 
