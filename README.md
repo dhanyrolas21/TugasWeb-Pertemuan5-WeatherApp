@@ -4,13 +4,6 @@ Tugas Rutin 5 — Pemrograman Web (3KOM40115) — JavaScript Modern ES6+
 
 Weather app sederhana (vanilla HTML/CSS/JS) yang mengambil data cuaca dari **OpenWeatherMap API**.
 
-## Cara menjalankan
-
-
-4. Buka `index.html` langsung di browser (double click), atau jalankan lewat live server (VS Code extension "Live Server") supaya lebih nyaman saat development.
-5. Saat pertama dibuka, halaman otomatis menampilkan cuaca **Medan**. Ketik nama kota lain di kolom pencarian untuk berpindah, misalnya `Jakarta`, `Tokyo`.
-
-
 ## Requirement yang dipenuhi
 
 - [x] ES6+ — `const`/`let`, arrow function, template literals di seluruh `script.js`
